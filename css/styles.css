@@ -10,6 +10,7 @@
 #about-conteiner {
     flex: 1.4;
     padding: 2rem 4rem;
+    position: relative;
     
 }
 #brand{
@@ -22,6 +23,7 @@
 }
 #brand img {
     height: 70px;
+    
 }
 
 #about-conteiner h1 {
@@ -38,13 +40,10 @@
     line-height: 1.5rem;
 }
 
-
-
-
-
 #form-conteiner {
     flex: 1;
     color: black;
+    position: relative;
     
 }
 
@@ -83,12 +82,15 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("/img/background.png");
 }
 
 #container{
     display: flex;
     justify-content: center;
     flex-direction: row;
+    overflow: hidden;
+    position: relative;
 }
 
 form input[type=submit]{
@@ -114,8 +116,7 @@ form input[type=submit]:hover{
 
 @media (max-width:450px){
     body{
-        justify-content: flex-start;
-        flex-direction: column;
+        display: block;
     }
 
     #container{
