@@ -1,3 +1,137 @@
-h1 {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inria Sans";
+}
+
+
+
+#about-conteiner {
+    flex: 1.4;
+    padding: 2rem 4rem;
+    
+}
+#brand{
+    display: flex;
+    justify-content: flex-start;
+    width: 68vw;
+    padding: 2rem 4rem;
+    height: 0px;
+    margin-bottom: 100px;
+}
+#brand img {
+    height: 70px;
+}
+
+#about-conteiner h1 {
+    font-size: 40px;
+    max-width: 400px;
+    margin-bottom: 100px;
+    line-height: 3rem;
+
+}
+
+#about-conteiner h2 {
+    font-size: 20px;
+    max-width: 600px;
+    line-height: 1.5rem;
+}
+
+
+
+
+
+#form-conteiner {
+    flex: 1;
+    color: black;
+    
+}
+
+#form-inner{
+    margin: 0rem;
+    padding: 3rem;
+    background-color: #00A3E1;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8.5px;
+    height: 460px;
+    width: 350px;
+}
+
+
+#register-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#register-form input{
+    width: 100%;
+    height: 45px;
+    border: 1px solid #009BDA;
+    border-radius: 10px;
+    padding-left: 15px;
+    margin: 5px 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+form input[type=submit]{
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    border: 0;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+form input[type=submit]:hover{
+    background-color: rgb(115, 117, 116);
+    color: white;
+}
+
+
+/*responsivo*/
+
+@media (max-width:450px){
+    body{
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    #container{
+        flex-direction: column;
+    }
+
+    #form-conteiner{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    #about-conteiner{
+        margin-bottom: 3rem;
+    }
+    
+    #brand{
+        display: flex;
+        justify-content: center;
+        padding: 3rem 4rem;
+    }
 }
