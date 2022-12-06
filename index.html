@@ -9,12 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     
         <div id="brand">
-            <img src="/img/logo-solus02.png" alt="Logo solus">
+            <img src="assets/img/logo-solus02.png" alt="Logo solus">
         </div>
 
         <div id="container">
@@ -28,15 +28,17 @@
             <div  id="form-conteiner">
                 <div id="form-inner">
                     <form id="register-form">
-                        <input id="name"type="text" name="name" placeholder="Digite Seu Nome..."/>
-                        <input id="lestname" type="text" name="lestname" placeholder="Digite Seu Sobrenome..."/>
+                        <input id="firstname"type="text" name="firstname" placeholder="Digite Seu Nome..."/>
+                        <input id="companyName" type="text" name="companyName" placeholder="Digite O Nome Da Empresa..."/>
                         <input id="email" type="email" name="email" placeholder="Digite Seu E-mail..."/>
-                        <input id="tel" type="tel" name="tel" pattern="\([0-9]{2}\) [9]{1}[0-9]{4}-[0-9]{4}" placeholder="(xx) 9xxxx-xxxx"/>
-                        <input id=""type="submit" value="Solicitar Avaliação" />
+                        <input id="document" type="text" name="document" placeholder="Digite O CNPJ..."/>
+                        <input id="phone" type="number" name="phone" placeholder="(xx) 9xxxx-xxxx"/>
+                        <input type="submit" onclick="sendData()" value="Solicitar Avaliação" />
                     </form>    
                 </div>
             </div>
         </div>
     
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
