@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -28,12 +28,27 @@
             <div  id="form-conteiner">
                 <div id="form-inner">
                     <form id="register-form">
-                        <input id="firstname"type="text" name="firstname" placeholder="Digite Seu Nome..."/>
-                        <input id="companyName" type="text" name="companyName" placeholder="Digite O Nome Da Empresa..."/>
-                        <input id="email" type="email" name="email" placeholder="Digite Seu E-mail..."/>
-                        <input id="document" type="text" name="document" placeholder="Digite O CNPJ..."/>
+                        <div class="inputWithIcon">
+                        <input id="firstname"type="text" name="firstname" placeholder="Seu Nome..."/>
+                        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="inputWithIcon">
+                        <input id="companyName" type="text" name="companyName" placeholder="Nome Da Empresa..."/>
+                        <i class="fa fa-institution fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="inputWithIcon">
+                        <input id="email" type="email" name="email" placeholder="Seu E-mail..."/>
+                        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="inputWithIcon">
+                        <input id="document" type="text" name="document" placeholder="Seu CNPJ..."/>
+                        <i class="fa fa-file-text-o fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="inputWithIcon">
                         <input id="phone" type="number" name="phone" placeholder="(xx) 9xxxx-xxxx"/>
-                        <input type="submit" onclick="sendData()" value="Solicitar Avaliação" />
+                        <i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <button type="submit" onclick="sendData()" value="Solicitar Avaliação" >Solicitar Avaliação</button>
                     </form>    
                 </div>
             </div>
