@@ -6,7 +6,7 @@ function sendData(){
     let name = document.getElementById('firstname').value;
     let companyName = document.getElementById('companyname').value;
     let phone = document.getElementById('phone').value;
-    let document = document.getElementById('document').value;
+    let doc = document.getElementById('document').value;
     let email = document.getElementById('email').value;
 
 
@@ -55,29 +55,33 @@ function sendData(){
     }
     
 
-    if(!validateCPNJ(document)){
+    if(!validateCPNJ(doc)){
         //tratamento de erro na tela
+        console.log("Erro cnpj")
     }
 
 
     if(!validateEmail(email)){
         //tratamento de erro na tela
+        console.log("Erro email")
     }
 
 
     if(!validatePhone(phone)){
         //tratamento de erro na tela
+        console.log("Erro fone")
     }
 
     const raw = JSON.stringify({
         name,
         email,
-        document,
+        doc,
         phone,
         companyName
     })
+    console.log(raw)
 
-
+/* 
     let requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -97,5 +101,5 @@ function sendData(){
     .then(result => {
         //Tratamento de sucesso ao enviar o form
     })
-    .catch(error => console.log('error', error));
+    .catch(error => console.log('error', error));*/
 }
