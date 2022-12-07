@@ -2,6 +2,22 @@ const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 
+let inputPhone = document.getElementById('phone');
+
+//Mask para o Input de Telefone
+/*inputPhone.addEventListener('keypress',() => {
+    let input = inputPhone.value.length;
+
+    if(input === 0){
+        inputPhone.value += "(";
+    }
+    if(input === 3){
+        inputPhone.value += ")";
+    }
+});*/
+
+
+
 function sendData(){
     let name = document.getElementById('firstname').value;
     let companyName = document.getElementById('companyname').value;
@@ -49,25 +65,27 @@ function sendData(){
     }
 
 
-    function validatePhone(phoneField){
-        let regex = new RegExp('^\\([0-9]{2}\\)((3[0-9]{3}-[0-9]{4})|(9[0-9]{3}-[0-9]{5}))$');
-        return regex.test(phone);
+    function validatePhone(phoneField){ 
+        if(!phone.value.length === 10){
+            return false;
+        }
+        return true;
     }
     
-
+    /*
     if(!validateCPNJ(document)){
-        //tratamento de erro na tela
+        console.log('doc error');
     }
 
 
     if(!validateEmail(email)){
-        //tratamento de erro na tela
+        console.log('email error');
     }
 
 
     if(!validatePhone(phone)){
-        //tratamento de erro na tela
-    }
+        console.log('phone error');
+    }*/
 
     const raw = JSON.stringify({
         name,
@@ -77,7 +95,9 @@ function sendData(){
         companyName
     })
 
+    console.log(raw);
 
+    /*
     let requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -97,5 +117,5 @@ function sendData(){
     .then(result => {
         //Tratamento de sucesso ao enviar o form
     })
-    .catch(error => console.log('error', error));
+    .catch(error => console.log('error', error));*/
 }
