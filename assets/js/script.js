@@ -5,7 +5,7 @@ myHeaders.append("Content-Type", "application/json");
 let inputPhone = document.getElementById('phone');
 
 //Mask para o Input de Telefone
-/*inputPhone.addEventListener('keypress',() => {
+inputPhone.addEventListener('keypress',() => {
     let input = inputPhone.value.length;
 
     if(input === 0){
@@ -14,7 +14,7 @@ let inputPhone = document.getElementById('phone');
     if(input === 3){
         inputPhone.value += ")";
     }
-});*/
+});
 
 
 
@@ -22,70 +22,105 @@ function sendData(){
     let name = document.getElementById('firstname').value;
     let companyName = document.getElementById('companyname').value;
     let phone = document.getElementById('phone').value;
-    let document = document.getElementById('document').value;
+    let documentNumber = document.getElementById('document').value;
     let email = document.getElementById('email').value;
-
+    phone = phone.replace('(','').replace(')','').replace(' ','');
 
     function validateCPNJ(documentNumber){
-        const validationNumbers = [ 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 ]
-        const cnpj = String(documentNumber).replace(/[^\d]/g, '')
-        
+        let cnpj = documentNumber;
 
-        if(cnpj.length !== 14){
+        if(!documentNumber.length === 14){
             return false
-        }
-    
-
-        if(/0{14}/.test(cnpj)){
-            return false
-        }
-    
-
-        for(let i = 0, n = 0; i < 12; n += cnpj[i] * validationNumbers[++i]){
-            if(cnpj[12] != (((n %= 11) < 2) ? 0 : 11 - n)){
-                return false
+        }else{
+            
+            let v1 = 0;
+            let v2 = 0;
+            let aux = false;
+            
+            for (let i = 1; cnpj.length > i; i++) { 
+                if (cnpj[i - 1] != cnpj[i]) {  
+                    aux = true;   
+                } 
+            } 
+            
+            if (aux == false) {  
+                return false; 
+            }
+            
+            for (let i = 0, p1 = 5, p2 = 13; (cnpj.length - 2) > i; i++, p1--, p2--) {
+                if (p1 >= 2) {  
+                    v1 += cnpj[i] * p1;  
+                } else {  
+                    v1 += cnpj[i] * p2;  
+                } 
+            } 
+            
+            v1 = (v1 % 11);
+            
+            if (v1 < 2) { 
+                v1 = 0; 
+            } else { 
+                v1 = (11 - v1); 
+            } 
+            
+            if (v1 != cnpj[12]) {  
+                return false; 
+            } 
+            
+            for (let i = 0, p1 = 6, p2 = 14; (cnpj.length - 1) > i; i++, p1--, p2--) { 
+                if (p1 >= 2) {  
+                    v2 += cnpj[i] * p1;  
+                } else {   
+                    v2 += cnpj[i] * p2; 
+                } 
+            }
+            
+            v2 = (v2 % 11); 
+            
+            if (v2 < 2) {  
+                v2 = 0;
+            } else { 
+                v2 = (11 - v2); 
+            } 
+            
+            if (v2 != cnpj[13]) {   
+                return false; 
+            } else {  
+                return true; 
             }
         }
-    
-
-        for (let i = 0, n = 0; i <= 12; n += cnpj[i] * validationNumbers[i++]){
-            if(cnpj[13] != (((n %= 11) < 2) ? 0 : 11 - n)){
-                return false
-            }
-        }
-
-
-        return true
     }
 
 
     function validateEmail(emailField){
-        let regex = new RegExp(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/);
+        let regex = new RegExp(/^\S+@\S+\.\S+/);
         return regex.test(emailField);
     }
 
 
     function validatePhone(phoneField){ 
-        if(!phone.value.length === 10){
+        if(!phoneField.length === 10 || isNaN(phoneField)){
             return false;
         }
         return true;
     }
     
-    /*
-    if(!validateCPNJ(document)){
-        console.log('doc error');
-    }
+    
+
 
 
     if(!validateEmail(email)){
-        console.log('email error');
+        throw Error('Email Error')
     }
 
 
     if(!validatePhone(phone)){
-        console.log('phone error');
-    }*/
+        throw Error('Phone Error')
+    }
+
+    if(!validateCPNJ(documentNumber)){
+        throw Error('CPNJ Error')
+    }
 
     const raw = JSON.stringify({
         name,
