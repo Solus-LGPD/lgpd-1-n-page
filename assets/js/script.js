@@ -22,7 +22,11 @@ function sendData(){
     let name = document.getElementById('firstname').value;
     let companyName = document.getElementById('companyname').value;
     let phone = document.getElementById('phone').value;
+<<<<<<< HEAD
     let documentNumber = document.getElementById('document').value;
+=======
+    let doc = document.getElementById('document').value;
+>>>>>>> marcus
     let email = document.getElementById('email').value;
     phone = phone.replace('(','').replace(')','').replace(' ','');
 
@@ -107,32 +111,54 @@ function sendData(){
     
     
 
+<<<<<<< HEAD
 
 
     if(!validateEmail(email)){
         throw Error('Email Error')
+=======
+    if(!validateCPNJ(doc)){
+        //tratamento de erro na tela
+        console.log("Erro cnpj")
+    }
+
+
+    if(!validateEmail(email)){
+        //tratamento de erro na tela
+        console.log("Erro email")
+>>>>>>> marcus
     }
 
 
     if(!validatePhone(phone)){
+<<<<<<< HEAD
         throw Error('Phone Error')
     }
 
     if(!validateCPNJ(documentNumber)){
         throw Error('CPNJ Error')
+=======
+        //tratamento de erro na tela
+        console.log("Erro fone")
+>>>>>>> marcus
     }
 
     const raw = JSON.stringify({
         name,
         email,
-        document,
+        doc,
         phone,
         companyName
     })
+    console.log(raw)
 
+<<<<<<< HEAD
     console.log(raw);
 
     /*
+=======
+/* 
+>>>>>>> marcus
     let requestOptions = {
         method: 'POST',
         headers: myHeaders,
