@@ -135,6 +135,15 @@ input[type="email"]:focus {
     color: #fff;
     background-color: dodgerBlue;
 }
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
 
 #register-form{
     display: flex;
@@ -158,7 +167,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("/assets/img/background.png");
+    background-image: url("assets/img/background.png");
 }
 
 #container{
