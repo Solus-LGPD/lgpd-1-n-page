@@ -22,7 +22,11 @@ function sendData(){
     let name = document.getElementById('firstname').value;
     let companyName = document.getElementById('companyname').value;
     let phone = document.getElementById('phone').value;
+<<<<<<< HEAD
     let documentNumber = document.getElementById('document').value;
+=======
+    let doc = document.getElementById('document').value;
+>>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     let email = document.getElementById('email').value;
     phone = phone.replace('(','').replace(')','').replace(' ','');
 
@@ -107,32 +111,54 @@ function sendData(){
     
     
 
+<<<<<<< HEAD
 
 
     if(!validateEmail(email)){
         throw Error('Email Error')
+=======
+    if(!validateCPNJ(doc)){
+        //tratamento de erro na tela
+        console.log("Erro cnpj")
+    }
+
+
+    if(!validateEmail(email)){
+        //tratamento de erro na tela
+        console.log("Erro email")
+>>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     }
 
 
     if(!validatePhone(phone)){
+<<<<<<< HEAD
         throw Error('Phone Error')
     }
 
     if(!validateCPNJ(documentNumber)){
         throw Error('CPNJ Error')
+=======
+        //tratamento de erro na tela
+        console.log("Erro fone")
+>>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     }
 
     const raw = JSON.stringify({
         name,
         email,
-        document,
+        doc,
         phone,
         companyName
     })
+    console.log(raw)
 
+<<<<<<< HEAD
     console.log(raw);
 
     /*
+=======
+/* 
+>>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     let requestOptions = {
         method: 'POST',
         headers: myHeaders,
