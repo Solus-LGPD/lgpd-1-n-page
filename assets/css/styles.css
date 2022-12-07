@@ -167,7 +167,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("assets/img/background.png");
+    background-image: url("/assets/img/background.png");
 }
 
 #container{
