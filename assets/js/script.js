@@ -22,11 +22,7 @@ function sendData(){
     let name = document.getElementById('firstname').value;
     let companyName = document.getElementById('companyname').value;
     let phone = document.getElementById('phone').value;
-<<<<<<< HEAD
     let documentNumber = document.getElementById('document').value;
-=======
-    let doc = document.getElementById('document').value;
->>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     let email = document.getElementById('email').value;
     phone = phone.replace('(','').replace(')','').replace(' ','');
 
@@ -103,62 +99,50 @@ function sendData(){
 
 
     function validatePhone(phoneField){ 
-        if(!phoneField.length === 10 || isNaN(phoneField)){
-            return false;
+        if(phoneField.length === 11 || isNaN(phoneField)){
+            return true;
         }
-        return true;
+        return false;
     }
     
     
 
-<<<<<<< HEAD
 
 
     if(!validateEmail(email)){
+        let n = document.querySelector("#email")
+        n.style.borderBottom = ("4px solid #FA1D00")
+        alert("Email invalido")
         throw Error('Email Error')
-=======
-    if(!validateCPNJ(doc)){
-        //tratamento de erro na tela
-        console.log("Erro cnpj")
-    }
-
-
-    if(!validateEmail(email)){
-        //tratamento de erro na tela
-        console.log("Erro email")
->>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     }
 
 
     if(!validatePhone(phone)){
-<<<<<<< HEAD
+        let n = document.querySelector("#phone")
+        n.style.borderBottom = ("4px solid #FA1D00")
+        alert("Telefone invalido")
         throw Error('Phone Error')
     }
 
     if(!validateCPNJ(documentNumber)){
+        let n = document.querySelector("#document")
+        n.style.borderBottom = ("4px solid #FA1D00")
+        alert("CNPJ invalido")
         throw Error('CPNJ Error')
-=======
-        //tratamento de erro na tela
-        console.log("Erro fone")
->>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     }
 
     const raw = JSON.stringify({
         name,
         email,
-        doc,
+        document,
         phone,
         companyName
     })
     console.log(raw)
 
-<<<<<<< HEAD
     console.log(raw);
 
     /*
-=======
-/* 
->>>>>>> a717afec0a4ab6ed136ba455afa7840fc8d6b4f0
     let requestOptions = {
         method: 'POST',
         headers: myHeaders,
