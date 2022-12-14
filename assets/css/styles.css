@@ -15,16 +15,14 @@
 #brand{
     display: flex;
     justify-content: flex-start;
-    width: 72vw;
+    width: 82vw;
     padding: 2rem 4rem;
     height: 0px;
     margin-bottom: 100px;
 }
 #brand img {
     height: 75px;
-    
 }
-
 #about-conteiner h1 {
     font-size: 40px;
     max-width: 400px;
@@ -40,24 +38,18 @@
 }
 
 #form-conteiner {
-    flex: 1;
     color: black;
     position: relative;
-    
+
 }
 
 #form-inner{
-    
     padding: 3rem;
-    background-color: #00A3E1;
-    display: flex;
+    background-color: #009BDA;
     text-align: center;
-    flex-direction: column;
-    align-items: stretch;
     border-radius: 8.5px;
-    height: 530px;
+    height: 480px;
     width: 350px;
-    
 }
 
 input[type="text"] {
@@ -146,11 +138,13 @@ input[type=number] {
 
 }
 
+
 #register-form{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    
 }
 
 #register-form input{
@@ -160,7 +154,6 @@ input[type=number] {
     border-radius: 10px;
     padding-left: 35px;
     margin: 5px 0;
-    
 }
 
 body{
@@ -170,6 +163,7 @@ body{
     align-items: center;
     height: 100vh;
     background-image: url("/assets/img/background.png");
+    justify-content: flex-start;
 }
 
 #container{
@@ -178,6 +172,7 @@ body{
     flex-direction: row;
     overflow: hidden;
     position: relative;
+    align-items: baseline;
 }
 
 button[type=button]{
