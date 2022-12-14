@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: "Inria Sans";
 }
@@ -9,20 +8,20 @@
 
 #about-conteiner {
     flex: 1.4;
-    padding: 2rem 4rem;
+    padding: 1rem 3rem;
     position: relative;
     
 }
 #brand{
     display: flex;
     justify-content: flex-start;
-    width: 68vw;
+    width: 72vw;
     padding: 2rem 4rem;
     height: 0px;
     margin-bottom: 100px;
 }
 #brand img {
-    height: 70px;
+    height: 75px;
     
 }
 
@@ -48,15 +47,17 @@
 }
 
 #form-inner{
-    margin: 0rem;
+    
     padding: 3rem;
     background-color: #00A3E1;
+    display: flex;
     text-align: center;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     border-radius: 8.5px;
     height: 530px;
     width: 350px;
+    
 }
 
 input[type="text"] {
@@ -159,6 +160,7 @@ input[type=number] {
     border-radius: 10px;
     padding-left: 35px;
     margin: 5px 0;
+    
 }
 
 body{
@@ -167,7 +169,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("/lgpd-1-n-page/assets/img/background.png");
+    background-image: url("/assets/img/background.png");
 }
 
 #container{
