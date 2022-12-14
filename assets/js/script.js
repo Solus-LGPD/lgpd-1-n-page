@@ -99,10 +99,10 @@ function sendData(){
 
 
     function validatePhone(phoneField){ 
-        if(!phoneField.length === 10 || isNaN(phoneField)){
-            return false;
+        if(phoneField.length === 11 || isNaN(phoneField)){
+            return true;
         }
-        return true;
+        return false;
     }
     
     
@@ -110,22 +110,31 @@ function sendData(){
 
 
     if(!validateEmail(email)){
+        let n = document.querySelector("#email")
+        n.style.borderBottom = ("4px solid #FA1D00")
+        alert("Email invalido")
         throw Error('Email Error')
     }
 
 
     if(!validatePhone(phone)){
+        let n = document.querySelector("#phone")
+        n.style.borderBottom = ("4px solid #FA1D00")
+        alert("Telefone invalido")
         throw Error('Phone Error')
     }
 
     if(!validateCPNJ(documentNumber)){
+        let n = document.querySelector("#document")
+        n.style.borderBottom = ("4px solid #FA1D00")
+        alert("CNPJ invalido")
         throw Error('CPNJ Error')
     }
 
     const raw = JSON.stringify({
         name,
         email,
-        doc,
+        document,
         phone,
         companyName
     })
