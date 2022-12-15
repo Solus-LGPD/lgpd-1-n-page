@@ -93,7 +93,7 @@ function sendData(){
 
 
     function validateEmail(emailField){
-        let regex = new RegExp(/^\S+@\S+\.\S+/);
+        let regex = new RegExp(/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/);
         return regex.test(emailField);
     }
 
@@ -138,11 +138,7 @@ function sendData(){
         phone,
         companyName
     })
-    console.log(raw)
 
-    console.log(raw);
-
-    /*
     let requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -150,7 +146,27 @@ function sendData(){
         redirect: 'follow'
     };
 
+    let element = document.querySelector("#send-button");
+    element.style.backgroundColor = ("#006600");
 
+
+    console.log(raw);
+    /*
+    //teste
+    fetch("http://localhost:3333/send", requestOptions)
+    .then(async response =>  {
+        if(!response.ok){
+            const err = await response.json();
+            throw Error(response.statusText);
+        }
+        //código para ser enviado
+        element.innerHTML = 'ENVIADO'
+        alert("Formulário Enviado com Sucesso");
+        return response.json();
+    })
+    .catch(error => console.log('error', error));
+
+    /*
     fetch("IP ou Domínio da API", requestOptions)
     .then(async response =>  {
         if(!response.ok){
